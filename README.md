@@ -6,7 +6,7 @@ This is a custom `tail -f` command implemetation in nodejs and using browser as 
 1. Clone this repo
 2. `cd ./nodetailf`
 3. `npm install`
-4. `node server.js <file-path>`
+4. `node server.js <file-path>` example - `node server.js ./testFile.txt`
 5. Monitor the tailed file at - http://127.0.0.1:9211 in any browser.
 
 ## Utilities
