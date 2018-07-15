@@ -1,0 +1,24 @@
+<html>
+  <title>
+    tail -f NodeJS Implementation
+  </title>
+  <head>
+  </head>
+  <body>
+  </body>
+  <script type="text/javascript">
+    (function() {
+    	var ws = new WebSocket('ws://127.0.0.1:9211/wss');
+
+      ws.onopen = function(){
+        console.log('ws ready');
+      }
+
+      ws.onmessage = function(msg){
+        document.write(msg.data.replace(/\n/g, "<br/>").replace(/ /g, '&nbsp;'));
+        document.write('<br/>');
+        window.scrollTo(0,document.body.scrollHeight);
+      }
+    })();
+  </script>
+</html>
