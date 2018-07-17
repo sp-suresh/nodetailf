@@ -1,4 +1,4 @@
-# tail -f using uws and nodejs
+# tail -f using µws and nodejs
 This is a custom `tail -f` command implemetation in nodejs and using browser as command output implemented over websocket. Server uses port - `9211`, you can change this in `server.js` file.
 
 ## How to run
