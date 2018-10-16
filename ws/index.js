@@ -1,5 +1,6 @@
 const WebSocket = require('uws').Server;
 const fw = require('../fileWatcher');
+const {initReadLines} = require('../env');
 
 function start(server, filePath, cb){
 
@@ -23,11 +24,11 @@ function start(server, filePath, cb){
 
       var startIX;
 
-      if(fileDataArr.length < 10){
+      if(fileDataArr.length < initReadLines){
         startIX = 0;
       }
       else{
-        startIX = (fileDataArr.length - 10);
+        startIX = (fileDataArr.length - initReadLines);
       }
       for(var i = startIX; i < fileDataArr.length; i++){
         ws.send(fileDataArr[i]);

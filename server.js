@@ -1,8 +1,7 @@
 var wsServer = require('./ws');
 const fs = require('fs');
 var http = require('http');
-const PORT = 9211;
-
+var {port} = require('./env');
 
 if (process.argv.length > 2){
   var filePath = process.argv[2] || "";
@@ -13,7 +12,6 @@ if (process.argv.length > 2){
   else{
     console.log('watching file', filePath);
   }
-
 }
 else{
   console.log('File path missing!');
@@ -31,9 +29,9 @@ var server = http.createServer((request, response) => {
       response.end(content, 'utf-8');
     }
   });
-}).listen(PORT);
+}).listen(port);
 
 wsServer.start(server, filePath);
 
-console.log('Server started on port: ', PORT);
-console.log(`Paste this link in your browser to monitor the file- http://127.0.0.1:${PORT}`);
+console.log('Server started on port: ', port);
+console.log(`Paste this link in your browser to monitor the file- http://127.0.0.1:${port}`);

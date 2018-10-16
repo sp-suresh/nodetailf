@@ -3,7 +3,6 @@ const fs = require('fs');
 class fileWatcher {
   constructor(path){
     this.filePath = path;
-    // this.fileStat = new Object;
     this.fileStat = fs.statSync(this.filePath);
   }
 
