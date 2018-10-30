@@ -2,7 +2,7 @@ const WebSocket = require('uws').Server;
 const fw = require('../fileWatcher');
 const {initReadLines} = require('../env');
 
-function start(server, filePath, cb){
+function start(server, filePath){
 
   var wss = new WebSocket({
     server: server,
